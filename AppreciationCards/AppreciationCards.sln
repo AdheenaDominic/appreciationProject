@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.106
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppreciationCards", "AppreciationCards\AppreciationCards.csproj", "{4882569F-F1CA-46F8-9F66-BCD0F9DE77E0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTest1", "UnitTest1\UnitTest1.csproj", "{4A48A152-485B-48EA-9A47-79EC0FC302F9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4882569F-F1CA-46F8-9F66-BCD0F9DE77E0} = {4882569F-F1CA-46F8-9F66-BCD0F9DE77E0}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4882569F-F1CA-46F8-9F66-BCD0F9DE77E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4882569F-F1CA-46F8-9F66-BCD0F9DE77E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4882569F-F1CA-46F8-9F66-BCD0F9DE77E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4882569F-F1CA-46F8-9F66-BCD0F9DE77E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A48A152-485B-48EA-9A47-79EC0FC302F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A48A152-485B-48EA-9A47-79EC0FC302F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A48A152-485B-48EA-9A47-79EC0FC302F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A48A152-485B-48EA-9A47-79EC0FC302F9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C450F4C8-135A-4018-9294-C2D55CA26255}
+	EndGlobalSection
+EndGlobal

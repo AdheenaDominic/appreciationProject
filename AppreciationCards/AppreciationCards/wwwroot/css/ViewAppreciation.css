@@ -1,0 +1,169 @@
+﻿body {
+    padding-top: 80px;
+}
+
+#toolbar {
+    font-size: 20px;
+    font-weight: 400;
+    padding: 40px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    width: 100%;
+    height: 64px;
+    margin-bottom: 20px;
+    background: white;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+#date-picker {
+    margin-left: auto;
+    margin-right: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.date-item {
+    margin: 0 5px;
+}
+
+.toolbar-text {
+    font-family: "Roboto";
+    font-size: 24px;
+    font-weight: 400;
+    color: rgba(0,0,0,.987);
+    line-height: 24px;
+    margin: 0;
+    padding: 0;
+}
+
+span-1 {
+    text-align: center;
+    text-decoration-style: solid;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: white;
+    color: #1178b3;
+    font-size: 10px;
+}
+h1 {
+    padding-bottom: 15px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+span {
+    border-width: 10px;
+    background-color: green;
+    padding: 10px;
+    color: white;
+    text-align: left;
+}
+#message {
+    padding-top: 80px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+    text-align: left;
+}
+#card {
+    border-width: 10px;
+    background-color: #1178b3;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+@media(max-width:1700px) {
+    span-1 {
+        text-align: center;
+        text-decoration-style: solid;
+        padding: 10px;
+        background-color: white;
+        color: #1178b3;
+        font-size: 30px;
+    }
+    h1 {
+        padding-bottom: 15px;
+        padding-left: 25%;
+        padding-right: 10%;
+    }
+    span {
+        background-color: green;
+        padding: 5px;
+        color: white;
+        text-align: center;
+    }
+    #message {
+        padding-top: 0px;
+        padding-right: 50px;
+        text-align: center;
+    }
+}
+@media(max-width:900px) {
+    span-1 {
+        text-align: left;
+        text-decoration-style: solid;
+        padding: 5px;
+        background-color: white;
+        color: #1178b3;
+        font-size: 20px;
+    }
+    h1 {
+        padding-bottom: 15px;
+        padding-left: 25%;
+        padding-right: 0%;
+    }
+    span {
+        border-width: 0px;
+        background-color: green;
+        padding: 5px;
+        color: white;
+        text-align: center;
+    }
+    #message {
+        padding-top: 0px;
+        padding-right: 50px;
+        text-align: center;
+    }
+}
+* {
+    box-sizing: border-box;
+}
+.slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+}
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 26px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 28px;
+    transition: 0.6s ease;
+    border-radius: 3px 3px 3px 3px;
+    user-select: none;
+}
+.next {
+    right: 0;
+    border-radius: 3px 3px 3px 3px;
+}
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+#canvasWrapper {
+    position: relative;
+    padding-top: 20px;
+    width: 80%;
+    margin: 0 auto;
+}
+

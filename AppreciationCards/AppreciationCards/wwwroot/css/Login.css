@@ -1,0 +1,44 @@
+﻿* {
+    box-sizing: border-box;
+}
+body {
+    padding-top: 150px;
+    color: black;
+}
+.background {
+    height: 500px;
+    background-image: url(../images/values.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+}
+h1 {
+    padding-bottom: 15px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+@media(max-width:1700px) {
+    h1 {
+    padding-bottom: 15px;
+    padding-left: 25%;
+    padding-right: 10%;
+    }
+}
+@media(max-width:900px) {
+    h1 {
+    padding-bottom: 15px;
+    padding-left: 25%;
+    padding-right: 0%;
+    }
+}
+input[type=text] {
+    width: 100%;
+    padding: 15px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+.column {
+    background-color: #f2f2f2;
+    padding:50px;
+}

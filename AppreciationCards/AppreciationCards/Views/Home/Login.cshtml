@@ -1,0 +1,21 @@
+﻿<head>
+    <link rel="stylesheet" href="https://edge.xero.com/style/xui/14.1.2/xui.min.css" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="stylesheet" href="~/css/Login.css" />
+</head>
+<body class="background">
+    <div class="column">
+        <form id="LoginForm" asp-controller="Home" method="post" asp-action="HomePage" class="xui-form-layout">
+            <h1>Welcome</h1>
+            <br />
+            <div class="xui-field-layout">
+                <input id="UserName" class="xui-textinput xui-textinput--input" type="text" placeholder="User Name" aria-label="Standard input" required />
+            </div>
+            <div class="xui-field-layout">
+                <input id="Password" class="xui-textinput xui-textinput--input" type="text" placeholder="Password" aria-label="Standard input" required />
+            </div>
+            <input class="xui-button-main" type="submit" value="Login" />
+        </form>
+     </div>
+</body>
+

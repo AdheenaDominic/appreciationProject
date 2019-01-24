@@ -1,0 +1,42 @@
+﻿<html class="xui-html" lang="en">
+<head>
+    <link rel="stylesheet" href="https://edge.xero.com/style/xui/14.1.2/xui.css" />
+    <link rel="stylesheet" href="~/css/ViewAppreciation.css" />
+    <link rel="stylesheet" href="~/css/PresentationStyleSheet.css" />
+</head>
+<body class="background">
+    <script src="~/js/AppreciationCard.js"></script>
+    <script src="~/js/cardPresentation.js"></script>
+    <script>
+        const LEFT_ARROW = 37;
+        const RIGHT_ARROW = 39;
+        window.onkeyup = function (e) {
+            console.log(e);
+            let key = e.keyCode ? e.keyCode : e.which;
+            console.log(key);
+            if (key == RIGHT_ARROW) {
+                nextCard();
+                setCardCounter();
+            } else if (key == LEFT_ARROW) {
+                previousCard();
+                setCardCounter();
+            }
+        }
+    </script>
+
+    <div class="slideshow-container">
+        <div id="canvasWrapper">
+            <div style="text-align:center;" id="canvasLoader" class="xui-loader" role="progressbar" aria-valuetext="Canvas loading">
+                <div class="xui-loader--dot"></div>
+                <div class="xui-loader--dot"></div>
+                <div class="xui-loader--dot"></div>
+            </div>
+            <canvas id="canvas"></canvas>
+        </div>
+        <a class="prev" onclick="previousCard(), setCardCounter()">&#x1F448;</a>
+        <a class="next" onclick="nextCard(), setCardCounter()">&#x1F449;</a>
+    </div>
+    <h2 id="cardCount"></h2>
+
+</body>
+</html>

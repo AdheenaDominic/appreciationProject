@@ -1,0 +1,79 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model AppreciationCards.Models.Messages
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://edge.xero.com/style/xui/14.1.2/xui.min.css" />
+    <link rel="stylesheet" href="~/css/SharedStyles.css" />
+    <link rel="stylesheet" href="~/css/EmojiPicker.css" />
+    <script src="~/js/CanvasTextWrapper.js"></script>
+    <script src="~/js/AppreciationCard.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="~/js/EmojiPicker.js"></script>
+    <script src="~/js/CardPreview.js"></script>
+</head>
+    <body>
+    <form id="AppreciationForm" asp-controller="Home" method="post" asp-action="CreateAppreciation" class="form-example">
+        <div class="row">
+            <div class="column">
+                <label asp-for="ToName" class="xui-text-label" style="padding-top:5px"></label>
+                <input asp-for="ToName" id="toInput" class="xui-textinput xui-textinput--input" type="text" placeholder="Who is receiving this" aria-label="Standard input" required />
+                <label asp-for="FromName" class="xui-text-label" style="padding-top:5px"></label>
+                <input asp-for="FromName" id="fromInput" class="xui-textinput xui-textinput--input" type="text" placeholder="Who is sending this" aria-label="Standard input" required />
+            </div>
+            <div class="column">
+                <label asp-for="Value" class="xui-text-label" style="padding-top:5px">Select a Value</label>
+                <div class="xui-select">
+                    <select asp-for="Value" class="form-control">
+                        <option value="Champion">Champion</option>
+                        <option value="Beautiful">Beautiful</option>
+                        <option value="Human">Human</option>
+                        <option value="Challenge">Challenge</option>
+                        <option value="Ownership">Ownership</option>
+                    </select>
+                </div>
+            </div>
+            <div class="column">
+                <label asp-for="ValueId" class="xui-text-label" style="padding-top:5px">Select a Value</label>
+                <div class="xui-select">
+                    <select asp-for="ValueId" class="form-control" asp-items=@((SelectList) ViewData["ValueId"])></select>
+                </div>
+                <label class="xui-text-label" style="padding-top:5px">Select a Font</label>
+                <div class="xui-select">
+                    <select id="fontFamilySelector" class="form-control">
+                        <option>IBM Plex Sans</option>
+                        <option>Roboto</option>
+                        <option>Gloria Hallelujah</option>
+                        <option>Amatic SC</option>
+                        <option>Major Mono Display</option>
+                        <option>Permanent Marker</option>
+                        <option>Homemade Apple</option>
+                        <option>Indie Flower</option>
+                        <option>Allura</option>
+                        <option>Cabin Sketch</option>
+                    </select>
+                </div>
+                <label class="xui-text-label" style="padding-top:5px">Font Size</label>
+                <input id="fontSizeInput" class="xui-textinput xui-textinput--input" type="text" placeholder="32" aria-label="Standard input" required />
+            </div>
+        </div>
+        <label asp-for="Content" class="xui-text-label" style="padding-top:5px"></label>
+        <textarea asp-for="Content" id="messageInput" class="xui-textinput xui-textinput--input xui-u-resize-none" aria-label="Standard textarea" placeholder="Write your message here" rows="5" required></textarea>
+        <br />
+        <input type="button" value="&#x1F603 Emojis" onclick="DisplayEmojiPicker()">   
+        <div id="emojiselector" style="display:none;"></div>
+        <div id="canvasWrapper">
+            <div id="canvasLoader" class="xui-loader" role="progressbar" aria-valuetext="Canvas loading">
+                <div class="xui-loader--dot"></div>
+                <div class="xui-loader--dot"></div>
+                <div class="xui-loader--dot"></div>
+            </div>
+            <canvas id="canvas"></canvas>
+        </div>
+        <div class="buttonholder">
+            <button id="submit" class='xui-button xui-button-create'>Submit</button>
+            <button id="printButton" class='xui-button xui-button-standard'>Print</button>
+        </div>
+    </form>
+    </body>

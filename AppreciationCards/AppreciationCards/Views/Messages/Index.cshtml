@@ -1,0 +1,66 @@
+﻿@model IEnumerable<AppreciationCards.Models.Messages>
+@{
+    ViewData["Title"] = "Index";
+}
+<html class="xui-html" lang="en">
+<head>
+    <link rel="stylesheet" href="https://edge.xero.com/style/xui/14.1.2/xui.css" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="stylesheet" href="~/css/ViewAppreciation.css" />
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="xui-row-grid" style="background-color: #1178b3">
+        <div class="xui-column-12-of-12">
+            <br />
+            <h1><span-1>APPRECIATIONS FOR THIS WEEK</span-1></h1>
+            <br />
+        </div>
+    </div>
+    <br />
+    @foreach (var item in Model)
+    {
+        <div class="xui-row-grid " id="card">
+            <div class='xui-column-3-of-12-wide xui-column-3-of-12-medium xui-column-12-of-12'>
+                <div>
+                    <p class="xui-text-emphasis">
+                        <span>To:</span>  @Html.DisplayFor(modelItem => item.ToName)
+                    </p>
+                    <br />
+                    <p class="xui-text-emphasis">
+                        <span>From:</span> @Html.DisplayFor(modelItem => item.FromName)
+                    </p>
+                    <br />
+                    <p class="xui-text-emphasis">
+                        <span>Values:</span> @Html.DisplayFor(modelItem => item.Value)
+                    </p>
+                </div>
+            </div>
+            <div class='xui-column-5-of-12-wide xui-column-6-of-12-medium xui-column-12-of-12'>
+                <p class="xui-heading-small xui-text-emphasis" id="message">
+                    @Html.DisplayFor(modelItem => item.Content)
+                </p>
+            </div>
+            <div class='xui-column-4-of-12-wide xui-column-3-of-12-medium xui-column-12-of-12'>
+                <button style="color:black;" onclick="hideCard()">Archive Message </button>
+                <br />
+                <br>
+                <button class="xui-button-negative">Delete</button>
+            </div>
+        </div>
+        <br />
+
+        <script>
+            function hideCard() {
+                var x = document.getElementById("card");
+                x.style.display = "none";
+            }
+        </script>
+    }
+</body>
+</html>

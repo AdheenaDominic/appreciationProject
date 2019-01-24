@@ -1,0 +1,45 @@
+﻿@model AppreciationCards.Models.Messages
+@{
+    ViewData["Title"] = "Details";
+}
+<h2>Details</h2>
+<div>
+    <h4>Messages</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Content)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Content)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ToName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ToName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FromName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FromName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MessageDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MessageDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Value)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Value)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.MessageId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

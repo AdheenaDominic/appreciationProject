@@ -1,0 +1,1 @@
+The images here are copy righted and used without permission, so they have to be either replaced or purchased.

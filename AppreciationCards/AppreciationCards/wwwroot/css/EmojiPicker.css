@@ -1,0 +1,71 @@
+﻿.emoji-picker {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    height: 300px;
+    width:300px;
+    overflow: auto;
+    overflow-y: scroll;
+}
+.emoji-picker .emoji-group .emoji-category {
+    color: grey;
+    font-family: sans-serif;
+    font-size: 0.8em;
+    font-weight: bold;
+    padding: 4px;
+}
+.emoji-picker .emoji-group .emoji {
+    background-color: inherit;
+    border-radius: 2px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 1.2em;
+    margin: 2px;
+    padding: 0 4px;
+}
+.emoji-picker .emoji-group .emoji:hover {
+    background-color: lightgrey;
+}
+.emoji-picker .emoji-group .emoji.emoji-with-types {
+    position: relative;
+}
+.emoji-picker .emoji-group .emoji.emoji-with-types::before {
+    content: "";
+    position: absolute;
+    border-color: grey;
+    border-width: 5px;
+    border-style: solid;
+    border-bottom-color: transparent;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    -webkit-transform: rotate(-45deg);
+    right: -3px;
+    top: -3px;
+}
+.emoji-picker .emoji-group .emoji .emoji-types {
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0px 0px 10px #000;
+    display: none;
+    left: -20px;
+    position: absolute;
+    top: -40px;
+    width: 212px;
+    z-index: 1;
+}
+.emoji-picker .emoji-group .emoji .emoji-types.visible {
+    display: block;
+}
+.emoji-picker .emoji-group .emoji .emoji-types::after {
+    content: "";
+    border-color: grey;
+    border-width: 5px;
+    border-style: solid;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    position: absolute;
+    left: 30px;
+    bottom: -10px;
+}
+

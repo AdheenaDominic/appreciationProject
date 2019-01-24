@@ -1,0 +1,65 @@
+﻿@model IEnumerable<AppreciationCards.Models.Messages>
+@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
+@functions{
+    public string GetAntiXsrfRequestToken()
+    {
+        return Xsrf.GetAndStoreTokens(Context).RequestToken;
+    }
+}
+<html class="xui-html" lang="en">
+<head>
+    <link rel="stylesheet" href="https://edge.xero.com/style/xui/14.1.2/xui.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="stylesheet" href="~/css/SharedStyles.css" />
+    <script type="text/javascript" src="~/js/MessageDelete.js"></script>
+    <link rel="stylesheet" href="~/css/ViewAppreciation.css" />
+</head>
+
+<body class="background">
+    <input type="hidden" id="RequestVerificationToken" value="@GetAntiXsrfRequestToken()">
+    <div id="toolbar">
+        <h1 class="toolbar-text">View Appreciations</h1>
+        <form asp-action="ViewAppreciation" id="date-picker" method="get">
+            <label class="date-item" for="dateFrom">From</label>
+            <input class="date-item xui-textinput xui-textinput--input" type="date" name="dateFrom" />
+            <label class="date-item" for="dateTo">To</label>
+            <input class="date-item xui-textinput xui-textinput--input" type="date" name="dateTo" />
+            <input class='date-item xui-button xui-button-standard' type="submit" value="Find" />
+        </form>
+    </div>
+
+    @foreach (var item in Model)
+    {
+        <div class="cardContainer row">
+            <div class="card row">
+                
+                    <button id="close-dialog">
+                        <input type="hidden" value="Delete" />
+                        <i class="material-icons" onclick="OnDeleteButtonPressed('@item.ToName','@item.MessageDate.ToString("yyyyMMddHHmmss")')">
+                            clear
+                        </i>
+                    </button>
+                
+
+                <div class="content">
+                    <p id="story">Story</p>
+                    @Html.DisplayFor(modelItem => item.Content)
+                </div>
+                <div class="pull-right">
+                    <p class="to row">
+                        To: @Html.DisplayFor(modelItem => item.ToName)
+                    </p>
+                    <p class="from row">
+                        From: @Html.DisplayFor(modelItem => item.FromName)
+                    </p>
+                </div>
+                <p class="value row">
+                    @Html.DisplayFor(modelItem => item.Value)
+                </p>
+            </div>
+        </div>
+    }
+</body>
+</html>
